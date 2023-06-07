@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5911d7a9-b6bf-4ca9-b767-3f0839c2a1c3" name="Changes" comment="Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/veritabaniassignment.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/db/db_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/db/db_insert.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/db/eer/EER Diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/ServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/base/BaseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/base/BaseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/base/ServiceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/base/VarlikBaseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/controller/GameController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/dao/GameServiceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/impl/GameServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/GameDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/GamePrice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Genre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Platform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/ShortScreenshot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Store.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/UserGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/UserRating.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Wallet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/dto/BuyGameDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/dto/CommentDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/dto/GameSearchDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/test/java/com/example/service/ServiceApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2QsJIlHlDkPIEtg46jJHrATY84K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/serhatsezen/IdeaProjects/veritabaniassignment"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.service.ServiceApplication" />
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ServiceApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5911d7a9-b6bf-4ca9-b767-3f0839c2a1c3" name="Changes" comment="" />
+      <created>1686136278098</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686136278098</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Commit">
+      <created>1686136419253</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686136419254</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+  </component>
+</project>
