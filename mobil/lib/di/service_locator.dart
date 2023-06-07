@@ -1,5 +1,7 @@
 import 'package:assignment/di/network/api/game/games_api.dart';
+import 'package:assignment/di/network/api/user/user_api.dart';
 import 'package:assignment/di/repository/games_repository.dart';
+import 'package:assignment/di/repository/user_repository.dart';
 import 'package:dio/dio.dart';
 
 import 'package:get_it/get_it.dart';
@@ -13,6 +15,9 @@ Future<void> setup() async {
   getIt.registerSingleton(DioClient(getIt<Dio>()));
 
   getIt.registerSingleton(GamesApi(dioClient: getIt<DioClient>()));
+  getIt.registerSingleton(UserApi(dioClient: getIt<DioClient>()));
 
   getIt.registerSingleton(GamesRepository(getIt.get<GamesApi>()));
+  getIt.registerSingleton(UserRepository(getIt.get<UserApi>()));
+
 }

@@ -9,6 +9,8 @@ import com.example.service.model.dto.GameSearchDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -45,6 +47,15 @@ public class GameServiceImpl extends VarlikBaseService {
     }
 
     public int buyGame(BuyGameDto buyGameDto) {
-        return gameServiceDAO.buyGame(buyGameDto.getGameId(), buyGameDto.getUserId());
+        for (Long aLong : buyGameDto.getGameId()) {
+            gameServiceDAO.buyGame(aLong, buyGameDto.getUserId(), LocalDateTime.now());
+        }
+        if (buyGameDto.getPaymentType() == PaymentType.PAYWallet) {
+            Long balance = getUserWallet(buyGameDto.getUserId());
+            double netBalance = (double)balance - buyGameDto.getTotalPrice();
+            gameServiceDAO.updateBalance(buyGameDto.getUserId(), netBalance);
+        }
+
+        return  buyGameDto.getGameId().size();
     }
 }

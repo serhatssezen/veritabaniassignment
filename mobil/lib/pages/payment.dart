@@ -1,38 +1,39 @@
 import 'dart:async';
 
+import 'package:assignment/di/repository/user_repository.dart';
 import 'package:assignment/pages/payment_success.dart';
 import 'package:flutter/material.dart';
 
 import '../animation/FadeAnimation.dart';
+import '../di/service_locator.dart';
+import '../models/PaymentType.dart';
 
 class PaymentPage extends StatefulWidget {
-  const PaymentPage({ Key? key }) : super(key: key);
+  double? totalPrice;
+  List<int> gameId;
+  PaymentPage({ Key? key, required this.totalPrice, required this.gameId }) : super(key: key);
 
   @override
   _PaymentPageState createState() => _PaymentPageState();
 }
 
 class _PaymentPageState extends State<PaymentPage> {
-  int activeCard = 0;
+  PaymentType activeCard = PaymentType.CREDIT_CARD;
   bool _isLoading = false;
   late Timer _timer;
+  final userRepository = getIt.get<UserRepository>();
+  String walletPrice = "0";
 
   pay() {
     setState(() {
       _isLoading = true;
     });
-
-    const oneSec = const Duration(seconds: 2);
-    _timer = new Timer.periodic(
-      oneSec,
-      (Timer timer) {
-        setState(() {
-          _isLoading = false;
-          timer.cancel();
-          Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentSuccess()));
-        });
-      },
-    );
+    userRepository.buyGame(1, widget.gameId, widget.totalPrice ?? 0, activeCard).then((value)  {
+      setState(() {
+        _isLoading = false;
+        Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentSuccess()));
+      });
+    });
   }
 
   @override
@@ -41,19 +42,19 @@ class _PaymentPageState extends State<PaymentPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text('Ödeme', style: TextStyle(color: Colors.black),),
-        leading: BackButton(color: Colors.black,),
+        title: const Text('Ödeme', style: TextStyle(color: Colors.black),),
+        leading: const BackButton(color: Colors.black,),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              activeCard == 0 ?
+              activeCard == PaymentType.CREDIT_CARD ?
               FadeAnimation(1.2, AnimatedOpacity(
                 duration: Duration(milliseconds: 500),
-                opacity: activeCard == 0 ? 1 : 0,
+                opacity: activeCard == PaymentType.CREDIT_CARD ? 1 : 0,
                 child: Container(
                   width: double.infinity,
                   height: 200,
@@ -120,13 +121,13 @@ class _PaymentPageState extends State<PaymentPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.network('https://img.icons8.com/ios/2x/mac-os.png', height: 50),
-                          SizedBox(height: 30,),
+                          Text("$walletPrice₺", style: const TextStyle(color: Colors.black, fontSize: 24)),
+                          const SizedBox(height: 30,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text("Aydın Serhat SEZEN", style: TextStyle(color: Colors.black, fontSize: 18),),
+                              const Text("Aydın Serhat SEZEN", style: TextStyle(color: Colors.black, fontSize: 18),),
                               Image.network('https://img.icons8.com/ios/2x/sim-card-chip.png', height: 35,),
                             ],
                           )
@@ -144,7 +145,7 @@ class _PaymentPageState extends State<PaymentPage> {
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        activeCard = 0;
+                        activeCard = PaymentType.CREDIT_CARD;
                       });
                     },
                     child: AnimatedContainer(
@@ -153,16 +154,19 @@ class _PaymentPageState extends State<PaymentPage> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
-                        border: activeCard == 0 ? Border.all(color: Colors.grey.shade300, width: 1) 
+                        border: activeCard == PaymentType.CREDIT_CARD ? Border.all(color: Colors.grey.shade300, width: 1)
                           : Border.all(color: Colors.grey.shade300.withOpacity(0), width: 1),
                       ),
                       child: Image.network('https://img.icons8.com/color/2x/mastercard-logo.png', height: 50,),
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
+                    onTap: () async {
+                      await userRepository.getWallet("1").then((value) {
+                        walletPrice = value.toString();
+                      });
                       setState(() {
-                        activeCard = 1;
+                        activeCard = PaymentType.PAYWallet;
                       });
                     },
                     child: AnimatedContainer(
@@ -171,21 +175,21 @@ class _PaymentPageState extends State<PaymentPage> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
-                        border: activeCard == 1 ? Border.all(color: Colors.grey.shade300, width: 1) 
+                        border: activeCard == PaymentType.PAYWallet ? Border.all(color: Colors.grey.shade300, width: 1)
                           : Border.all(color: Colors.grey.shade300.withOpacity(0), width: 1),
                       ),
-                      child: Image.network('https://img.icons8.com/ios-filled/2x/apple-pay.png', height: 50,),
+                      child: Image.network('https://www.citypng.com/public/uploads/preview/paytm-wallet-logo-icon-png-11664330254y205py9hdb.png', height: 50,),
                     ),
                   ),
                 ]
               )),
               const SizedBox(height: 30,),
               const SizedBox(height: 100,),
-              FadeAnimation(1.5, const Row(
+              FadeAnimation(1.5, Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Toplam", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
-                  Text("240.00\₺", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
+                  const Text("Toplam", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
+                  Text("${widget.totalPrice!}\₺", style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
                 ],
               )),
               const SizedBox(height: 30),

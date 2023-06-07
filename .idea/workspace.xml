@@ -1,63 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5911d7a9-b6bf-4ca9-b767-3f0839c2a1c3" name="Changes" comment="Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/veritabaniassignment.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/db/db_create.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/db/db_insert.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/db/eer/EER Diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/ServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/base/BaseController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/base/BaseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/base/ServiceException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/base/VarlikBaseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/controller/GameController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/dao/GameServiceDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/impl/GameServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/GameDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/GamePrice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Genre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Platform.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/ShortScreenshot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Store.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/UserGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/UserRating.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/Wallet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/dto/BuyGameDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/dto/CommentDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/java/com/example/service/model/dto/GameSearchDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OdevBackend/service/src/test/java/com/example/service/ServiceApplicationTests.java" beforeDir="false" />
+    <list default="true" id="5911d7a9-b6bf-4ca9-b767-3f0839c2a1c3" name="Changes" comment="Mobile project">
+      <change afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/model/PaymentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobil/lib/di/network/api/user/user_api.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobil/lib/di/repository/user_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/dao/GameServiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/dao/GameServiceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/impl/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/impl/GameServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/model/dto/BuyGameDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/model/dto/BuyGameDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/di/network/api/constant/endpoints.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/di/network/api/constant/endpoints.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/di/network/api/game/games_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/di/network/api/game/games_api.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/di/repository/games_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/di/repository/games_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/di/service_locator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/di/service_locator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/models/Comment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/models/Comment.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/models/Game.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/models/Game.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/pages/cart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/pages/cart.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/pages/game_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/pages/game_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/pages/payment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/pages/payment.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2QsJIlHlDkPIEtg46jJHrATY84K" />
   <component name="ProjectViewState">
@@ -71,6 +61,11 @@
     "last_opened_file_path": "/Users/serhatsezen/IdeaProjects/veritabaniassignment"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.service.ServiceApplication" />
@@ -107,11 +102,19 @@
       <option name="project" value="LOCAL" />
       <updated>1686136419254</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Mobile project">
+      <created>1686136632049</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686136632049</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="Mobile project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mobile project" />
   </component>
 </project>

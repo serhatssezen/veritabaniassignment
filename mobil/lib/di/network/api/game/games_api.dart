@@ -22,4 +22,20 @@ class GamesApi {
       rethrow;
     }
   }
+
+  Future<Response> saveComment(int userId, int gameId, String comment) async {
+    try {
+      final Response response = await dioClient.post(
+        Endpoints.saveComment,
+        data: {
+          'userId': userId,
+          'gameId': gameId,
+          'comment': comment
+        },
+      );
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

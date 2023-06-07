@@ -1,6 +1,7 @@
 import 'package:assignment/models/Game.dart';
 import 'package:dio/dio.dart';
 
+import '../../models/Comment.dart';
 import '../network/api/game/games_api.dart';
 import '../network/dio_exception.dart';
 
@@ -15,6 +16,16 @@ class GamesRepository {
       return (response.data as List)
           .map((x) => Game.fromJson(x))
           .toList();
+    } on DioError catch (e) {
+      final errorMessage = DioExceptions.fromDioError(e).toString();
+      throw errorMessage;
+    }
+  }
+
+  Future<Comments> saveComment(String name, List<int> platforms, List<int> genres) async {
+    try {
+      final response = await gamesApi.getGames(name, platforms, genres);
+      return Comments.fromJson(response.data);
     } on DioError catch (e) {
       final errorMessage = DioExceptions.fromDioError(e).toString();
       throw errorMessage;

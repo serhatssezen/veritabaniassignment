@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -44,8 +46,12 @@ public interface GameServiceDAO extends JpaRepository<Comment, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO user_games (game_id, user_id) VALUES (:gameId, :userId)", nativeQuery = true)
-    int buyGame(@Param("gameId") Long gameId, @Param("userId") Long userId);
+    @Query(value = "INSERT INTO user_games (game_id, user_id, purchase_date) VALUES (:gameId, :userId, :date)", nativeQuery = true)
+    int buyGame(@Param("gameId") Long gameId, @Param("userId") Long userId, @Param("date") LocalDateTime purchaseDate);
 
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE wallet SET balance = :netBalance WHERE user_id = :userId", nativeQuery = true)
+    int updateBalance(@Param("userId") Long userId, @Param("netBalance") double netBalance);
 
 }

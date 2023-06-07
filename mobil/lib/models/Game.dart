@@ -4,6 +4,7 @@ import 'Genres.dart';
 import 'ShortScreenshots.dart';
 
 class Game {
+  int? id;
   String? slug;
   String? name;
   String? released;
@@ -13,9 +14,11 @@ class Game {
   List<ShortScreenshots> shortScreenshots = [];
   List<Genres> genres = [];
   List<GamePrices> prices = [];
-  List<Comment> comments = [];
+  List<Comments> comments = [];
 
-  Game(this.slug,
+  Game(
+      this.id,
+      this.slug,
       this.name,
       this.released,
       this.backgroundImage,
@@ -26,6 +29,7 @@ class Game {
       this.comments);
 
   Game.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
     slug = json['slug'];
     name = json['name'];
     released = json['released'];
@@ -53,7 +57,7 @@ class Game {
     if (json['comments'] != null) {
       comments = [];
       json['comments'].forEach((v) {
-        comments.add(Comment.fromJson(v));
+        comments.add(Comments.fromJson(v));
       });
     }
   }

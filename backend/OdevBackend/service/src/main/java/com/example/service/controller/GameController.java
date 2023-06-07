@@ -9,6 +9,7 @@ import com.example.service.model.dto.GameSearchDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -49,6 +50,7 @@ public class GameController extends BaseController<Comment, GameServiceImpl> {
         commt.setUser(gameServiceImpl.getUserById(comment.getUserId()));
         commt.setGame(gameServiceImpl.getGameById(comment.getGameId()));
         commt.setComment(comment.getComment());
+        commt.setCreatedAt(LocalDateTime.now());
         return (Comment) gameServiceImpl.create(commt);
     }
 

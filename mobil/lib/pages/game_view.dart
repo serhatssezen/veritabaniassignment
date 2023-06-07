@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../Utils/Shared.dart';
+import '../di/repository/games_repository.dart';
+import '../di/service_locator.dart';
 import '../models/Comment.dart';
 import '../models/Game.dart';
 import '../models/product.dart';
@@ -16,7 +18,9 @@ class GameViewPage extends StatefulWidget {
 
 class _GameViewPageState extends State<GameViewPage> with TickerProviderStateMixin {
   late ScrollController _scrollController;
-  bool _isScrolled = false;
+  TextEditingController commentController = TextEditingController();
+  final ScrollController _controller = ScrollController();
+  final gamesRepository = getIt.get<GamesRepository>();
 
   @override
   void initState() {
@@ -27,13 +31,9 @@ class _GameViewPageState extends State<GameViewPage> with TickerProviderStateMix
 
   void _listenToScrollChange() {
     if (_scrollController.offset >= 100.0) {
-      setState(() {
-        _isScrolled = true;
-      });
+
     } else {
-      setState(() {
-        _isScrolled = false;
-      });
+
     }
   }
 
@@ -131,9 +131,6 @@ class _GameViewPageState extends State<GameViewPage> with TickerProviderStateMix
                             ),
                           ],
                         ),),
-                        Text("\$ ${widget.game.prices.first.price}",
-                          style: const TextStyle(color: Colors.black, fontSize: 16),
-                        ),
                       ],
                     ),
                     const SizedBox(height: 10,),
@@ -147,7 +144,7 @@ class _GameViewPageState extends State<GameViewPage> with TickerProviderStateMix
                           onTap: () {
                             showCommentView(widget.game.comments);
                           },
-                          child: Text(" Yorumlar(${widget.game.comments.length})",
+                          child: Text("Yorumlar(${widget.game.comments.length})",
                             style: const TextStyle(color: Colors.black, fontSize: 16),
                           ),
                         )
@@ -166,7 +163,7 @@ class _GameViewPageState extends State<GameViewPage> with TickerProviderStateMix
                       ),
                       color: Colors.yellow[800],
                       child: const Center(
-                        child: Text("Sepete ekle", style: TextStyle(color: Colors.white, fontSize: 18),),
+                        child: Text("En uygun fiyat", style: TextStyle(color: Colors.white, fontSize: 18),),
                       ),
                     )
                   ],
@@ -250,7 +247,8 @@ class _GameViewPageState extends State<GameViewPage> with TickerProviderStateMix
   }
 
 
-  showCommentView(List<Comment> commentList) {
+  showCommentView(List<Comments> commentList) {
+
     return showModalBottomSheet(
         context: context,
         transitionAnimationController: AnimationController(duration: Duration(milliseconds: 400), vsync: this),
@@ -270,21 +268,66 @@ class _GameViewPageState extends State<GameViewPage> with TickerProviderStateMix
                   SizedBox(
                     height: 340,
                     child: ListView.builder(
+                      controller: _controller,
                       scrollDirection: Axis.vertical,
                       itemCount: commentList.length,
+                      padding: EdgeInsets.zero,
                       itemBuilder: (context, index) {
                         return Container(
                           margin: const EdgeInsets.only(top: 10),
+                          padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                          decoration: BoxDecoration(
+                            color: Colors.blueGrey.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Expanded(child: Text(commentList[index].username ?? "", style: const TextStyle(color: Colors.black, fontSize: 15),)),
-                              Expanded(child: Text(commentList[index].comment ?? "", style: const TextStyle(color: Colors.black, fontSize: 15),))
+                              Text(commentList[index].username ?? "", style: const TextStyle(color: Colors.black, fontSize: 15),),
+                              Text(commentList[index].comment ?? "", style: const TextStyle(color: Colors.black, fontSize: 15),)
                             ],
                           ),
                         );
                       },
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    height: 45,
+                    child: Row(
+                      children: [
+                        Flexible(child: TextField(
+                          autofocus: true,
+                          controller: commentController,
+                          cursorColor: Colors.grey,
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                            filled: true,
+                            fillColor: Colors.white,
+                            prefixIcon: const Icon(Icons.comment),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(50),
+                                borderSide: BorderSide.lerp(const BorderSide(color: Colors.black, width: 1),
+                                    const BorderSide(color: Colors.black, width: 1), 1)
+                            ),
+                            hintText: "Yorum yap",
+                            hintStyle: const TextStyle(fontSize: 14, color: Colors.black),
+                          ),
+                        ),),
+                        IconButton(
+                          icon: const Icon(Icons.send),
+                          onPressed: () {
+                            commentList.add(Comments(commentController.text, "user1"));
+                            gamesRepository.gamesApi.saveComment(1, widget.game.id!, commentController.text);
+                            commentController.text = "";
+                            _scrollDown();
+                            setState(() {});
+                          },
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -292,6 +335,13 @@ class _GameViewPageState extends State<GameViewPage> with TickerProviderStateMix
             );
           },
         )
+    );
+  }
+  void _scrollDown() {
+    _controller.animateTo(
+      _controller.position.maxScrollExtent + 60,
+      duration: const Duration(seconds: 1),
+      curve: Curves.fastOutSlowIn,
     );
   }
 }

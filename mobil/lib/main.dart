@@ -1,4 +1,3 @@
-
 import 'package:assignment/di/service_locator.dart';
 import 'package:assignment/pages/cart.dart';
 import 'package:assignment/pages/explore.dart';
@@ -41,8 +40,7 @@ class _HomePageState extends State<HomePage> {
     pages = [
       ExplorePage(callBack: _onItemTapped),
       const SearchPage(),
-      const CartPage(),
-      const ProfilePage()
+      const CartPage()
     ];
     _pageController = PageController(initialPage: 0);
 
@@ -75,11 +73,7 @@ class _HomePageState extends State<HomePage> {
           FlashyTabBarItem(
             icon: const Icon(Icons.shopping_bag_outlined, size: 23),
             title: const Text('Sepet'),
-          ),
-          FlashyTabBarItem(
-            icon: const Icon(Icons.account_circle_outlined, size: 23,),
-            title: const Text('Profil'),
-          ),
+          )
         ],
       ),
     );
