@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5911d7a9-b6bf-4ca9-b767-3f0839c2a1c3" name="Changes" comment="Mobile project">
-      <change afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/model/PaymentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobil/lib/di/network/api/user/user_api.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobil/lib/di/repository/user_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/dao/GameServiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/dao/GameServiceDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/impl/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/impl/GameServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/model/dto/BuyGameDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/OdevBackend/service/src/main/java/com/example/service/model/dto/BuyGameDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobil/lib/di/network/api/constant/endpoints.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/di/network/api/constant/endpoints.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobil/lib/di/network/api/game/games_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/di/network/api/game/games_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobil/lib/di/repository/games_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/di/repository/games_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobil/lib/di/service_locator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/di/service_locator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobil/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobil/lib/models/Comment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/models/Comment.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobil/lib/models/Game.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/models/Game.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobil/lib/pages/cart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/pages/cart.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobil/lib/pages/game_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/pages/game_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/di/network/api/user/user_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/di/network/api/user/user_api.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobil/lib/models/PaymentType.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/models/PaymentType.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobil/lib/pages/payment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/mobil/lib/pages/payment.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,12 +98,40 @@
       <option name="project" value="LOCAL" />
       <updated>1686136632049</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Mobile project">
+      <created>1686141591387</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686141591387</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
     <MESSAGE value="Mobile project" />
     <option name="LAST_COMMIT_MESSAGE" value="Mobile project" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="buyGameDto.getPaymentType()" language="JAVA" />
+        <watch expression="PaymentType.PAYWallet.getDisplayName()" language="JAVA" />
+        <watch expression="buyGameDto.getPaymentType() == PaymentType.PAYWallet.getDisplayName()" language="JAVA" />
+        <watch expression="buyGameDto.getPaymentType().equals(PaymentType.PAYWallet.getDisplayName())" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

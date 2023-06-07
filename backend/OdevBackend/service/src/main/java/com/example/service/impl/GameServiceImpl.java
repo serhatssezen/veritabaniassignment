@@ -50,7 +50,7 @@ public class GameServiceImpl extends VarlikBaseService {
         for (Long aLong : buyGameDto.getGameId()) {
             gameServiceDAO.buyGame(aLong, buyGameDto.getUserId(), LocalDateTime.now());
         }
-        if (buyGameDto.getPaymentType() == PaymentType.PAYWallet) {
+        if (buyGameDto.getPaymentType().equals(PaymentType.PAYWallet.getDisplayName())) {
             Long balance = getUserWallet(buyGameDto.getUserId());
             double netBalance = (double)balance - buyGameDto.getTotalPrice();
             gameServiceDAO.updateBalance(buyGameDto.getUserId(), netBalance);

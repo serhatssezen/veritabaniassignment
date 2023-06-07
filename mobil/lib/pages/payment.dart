@@ -95,8 +95,8 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
               )) :
               FadeAnimation(1.2, AnimatedOpacity(
-                duration: Duration(milliseconds: 500),
-                opacity: activeCard == 1 ? 1 : 0,
+                duration: const Duration(milliseconds: 500),
+                opacity: activeCard == PaymentType.PayWallet ? 1 : 0,
                 child: Container(
                   width: double.infinity,
                   height: 200,
@@ -166,7 +166,7 @@ class _PaymentPageState extends State<PaymentPage> {
                         walletPrice = value.toString();
                       });
                       setState(() {
-                        activeCard = PaymentType.PAYWallet;
+                        activeCard = PaymentType.PayWallet;
                       });
                     },
                     child: AnimatedContainer(
@@ -175,7 +175,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
-                        border: activeCard == PaymentType.PAYWallet ? Border.all(color: Colors.grey.shade300, width: 1)
+                        border: activeCard == PaymentType.PayWallet ? Border.all(color: Colors.grey.shade300, width: 1)
                           : Border.all(color: Colors.grey.shade300.withOpacity(0), width: 1),
                       ),
                       child: Image.network('https://www.citypng.com/public/uploads/preview/paytm-wallet-logo-icon-png-11664330254y205py9hdb.png', height: 50,),

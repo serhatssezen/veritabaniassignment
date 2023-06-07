@@ -51,7 +51,7 @@ public interface GameServiceDAO extends JpaRepository<Comment, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE wallet SET balance = :netBalance WHERE user_id = :userId", nativeQuery = true)
+    @Query(value = "UPDATE wallets SET balance = :netBalance WHERE user_id = :userId", nativeQuery = true)
     int updateBalance(@Param("userId") Long userId, @Param("netBalance") double netBalance);
 
 }

@@ -12,5 +12,5 @@ public class BuyGameDto {
     private Long userId;
     private List<Long> gameId;
     private double totalPrice;
-    private PaymentType paymentType;
+    private String paymentType;
 }

@@ -27,7 +27,7 @@ class UserApi {
           'userId': userId,
           'gameId': gameId,
           'totalPrice': totalPrice,
-          'paymentType': paymentType
+          'paymentType': paymentType.name
         },
       );
       return response;

@@ -1,6 +1,6 @@
 enum PaymentType {
   CREDIT_CARD,
-  PAYWallet,
+  PayWallet,
 }
 
 extension PaymentTypeExtension on PaymentType {
@@ -8,7 +8,7 @@ extension PaymentTypeExtension on PaymentType {
     switch (this) {
       case PaymentType.CREDIT_CARD:
         return "Credit Card";
-      case PaymentType.PAYWallet:
+      case PaymentType.PayWallet:
         return "Pay Wallet";
       default:
         return '';
